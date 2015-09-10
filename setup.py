@@ -2,16 +2,16 @@
 import sys
 import os
 
-from distutils.dist import Distribution
+from setuptools.dist import Distribution
 
-if 'setuptools' in sys.modules or any(
-        s.startswith('bdist') for s in sys.argv) or any(
-        s.startswith('develop') for s in sys.argv):
-    from setuptools import setup as setup
-    from setuptools import Extension
-else:  # special case for runtests.py
-    from distutils.core import setup as setup
-    from distutils.extension import Extension
+# if 'setuptools' in sys.modules or any(
+#         s.startswith('bdist') for s in sys.argv) or any(
+#         s.startswith('develop') for s in sys.argv):
+from setuptools import setup as setup
+from setuptools import Extension
+# else:  # special case for runtests.py
+#     from distutils.core import setup as setup
+#     from distutils.extension import Extension
 
 try:
     from Cython.Build import cythonize
