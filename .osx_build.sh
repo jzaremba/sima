@@ -9,7 +9,7 @@ brew update
 brew outdated cmake || brew upgrade cmake
 if [[ "$PY_VERSION" == "python3" ]]; then
     # Pin to Python3.5
-    brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/ec545d45d4512ace3570782283df4ecda6bb0044/Formula/python3.rb
+    brew outdated $PY_VERSION || brew upgrade https://raw.githubusercontent.com/Homebrew/homebrew-core/ec545d45d4512ace3570782283df4ecda6bb0044/Formula/python3.rb
 else
     brew outdated $PY_VERSION || brew upgrade $PY_VERSION
 fi
