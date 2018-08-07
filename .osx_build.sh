@@ -17,8 +17,7 @@ brew install hdf5
 if [[ "$TRAVIS_PYTHON_VERSION" == "py27" ]]; then
     sudo pip2 install numpy scipy matplotlib scikit-image shapely scikit-learn Pillow future toolz nose h5py Cython flake8 sphinx numpydoc picos
 else
-	# Aug. 2018 - One of these packages is pulling in PyWavelets, which seems
-	# to require that numpy already be installed when building.
-	sudo pip3 install numpy
-    sudo pip3 install scipy matplotlib scikit-image shapely scikit-learn Pillow future toolz nose h5py Cython flake8 sphinx numpydoc picos
+    # Aug. 2018 - Some packages need to be build from source and require these.
+    sudo pip3 install Cython numpy
+    sudo pip3 install scipy matplotlib scikit-image shapely scikit-learn Pillow future toolz nose h5py flake8 sphinx numpydoc picos
 fi
